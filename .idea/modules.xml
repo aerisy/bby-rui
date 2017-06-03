@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/RUI_core/RUI_core.iml" filepath="$PROJECT_DIR$/RUI_core/RUI_core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RUI_model/RUI_model.iml" filepath="$PROJECT_DIR$/RUI_model/RUI_model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RUI_multi.iml" filepath="$PROJECT_DIR$/RUI_multi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RUI_utils/RUI_utils.iml" filepath="$PROJECT_DIR$/RUI_utils/RUI_utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RUI_web/RUI_web.iml" filepath="$PROJECT_DIR$/RUI_web/RUI_web.iml" />
+    </modules>
+  </component>
+</project>
