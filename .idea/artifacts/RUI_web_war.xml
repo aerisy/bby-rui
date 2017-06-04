@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="RUI_web:war">
     <output-path>$PROJECT_DIR$/RUI_web/target</output-path>
-    <root id="archive" name="RUI_web-1.0-SNAPSHOT.war">
+    <root id="archive" name="ssm.war">
       <element id="artifact" artifact-name="RUI_web:war exploded" />
     </root>
   </artifact>

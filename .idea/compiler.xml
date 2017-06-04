@@ -17,7 +17,7 @@
       <module name="RUI_model" target="1.5" />
       <module name="RUI_multi" target="1.5" />
       <module name="RUI_utils" target="1.5" />
-      <module name="RUI_web" target="1.5" />
+      <module name="RUI_web" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
