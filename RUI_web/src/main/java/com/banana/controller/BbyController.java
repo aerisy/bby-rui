@@ -1,4 +1,4 @@
-package com.bananan.bby.controller;
+package com.banana.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,11 +9,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 
 @Controller
-@RequestMapping(value = "/bby/*")
+@RequestMapping(value = "/bby/")
 public class BbyController {
 
     @RequestMapping(value = "page")
     public String page() {
+        System.out.println("Hello this is demo page!");
         return "/views/pageDemo";
     }
 
