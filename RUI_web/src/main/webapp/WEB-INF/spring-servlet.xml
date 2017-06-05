@@ -20,9 +20,10 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
     <!-- 对模型视图名称的解析，在请求时模型视图名称添加前后缀 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
-        <property name="prefix" value="/"/>    <!-- 前缀 -->
+        <property name="prefix" value="/views/"/>    <!-- 前缀 -->
         <property name="suffix" value=".jsp"/>    <!-- 后缀 -->
     </bean>
     <!-- 访问静态文件（jpg,js,css）的方法 -->
     <mvc:resources location="/files/" mapping="/files/**" />
+    <mvc:resources location="/sui/" mapping="/sui/**" />
 </beans>

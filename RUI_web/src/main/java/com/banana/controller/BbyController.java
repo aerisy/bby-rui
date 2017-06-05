@@ -1,21 +1,29 @@
 package com.banana.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
- * Created by Administrator on 2017/6/3 0003.
+ * Created by Administrator on 2017/6/i3 0003.
  */
 
 @Controller
-@RequestMapping(value = "/bby/")
+@RequestMapping(value = "/")
 public class BbyController {
 
     @RequestMapping(value = "page")
     public String page() {
         System.out.println("Hello this is demo page!");
-        return "/views/pageDemo";
+        return "pageDemo";
+    }
+
+    @RequestMapping(value = "my{page}")
+    public String myPage(@PathVariable("page") String page) {
+        System.out.println(page);
+        System.out.println("Hello this is demo page!");
+        return page;
     }
 
     @RequestMapping(value = "message", produces = {"text/plain;charset=UTF-8"})
