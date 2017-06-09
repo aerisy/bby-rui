@@ -17,7 +17,9 @@ public class BbyController {
     public String page() {
         System.out.println("Hello this is demo page!");
         return "pageDemo";
+//        return "main";
     }
+
 
     @RequestMapping(value = "my{page}")
     public String myPage(@PathVariable("page") String page) {
@@ -25,6 +27,13 @@ public class BbyController {
         System.out.println("Hello this is demo page!");
         return page;
     }
+
+    @RequestMapping(value = "my/{page}")
+    public String my_Page(@PathVariable("page") String page) {
+        System.out.println("will go to my/"+page);
+        return page;
+    }
+
 
     @RequestMapping(value = "message", produces = {"text/plain;charset=UTF-8"})
     @ResponseBody
