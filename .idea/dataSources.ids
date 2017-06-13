@@ -3,4 +3,14 @@
   <data-source name="ybbDB.db" uuid="f0c49d2f-f638-4b51-9c9d-d944d45df0da">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
+  <data-source name="MySQL - bby@localhost" uuid="82961f89-8f18-4d2d-92bc-1c36e2b624f6">
+    <database-info product="MySQL" version="5.7.18" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.40 ( Revision: 402933ef52cad9aa82624e80acbea46e3a701ce6 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.5">
+      <schema id="1" name="bby"/>
+    </database-model>
+  </data-source>
 </component>
