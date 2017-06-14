@@ -10,19 +10,21 @@ import javax.persistence.*;
 @Table(name = "test_user")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "tableGenerator")
+    @TableGenerator(name = "tableGenerator", initialValue = 0, allocationSize = 1)
     private int ID;
-    @Column(name="name")
+    @Column(name = "name", length = 255)
     private String name;
-    @Column(name="sex")
+    @Column(name = "sex", length = 10)
     private String sex;
-    @Column(name="birth")
+    @Column(name = "birth", length = 10)
     private String birth;
-    @Column(name="idcard")
+    @Column(name = "idcard", length = 20)
     private String idcard;
-    @Column(name="telephone")
+    @Column(name = "telephone", length = 30)
     private String telephone;
-    @Column(name="address")
+    @Column(name = "address", length = 255)
     private String address;
 
     public int getID() {
@@ -79,5 +81,16 @@ public class User {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        String toString = "Name:" + this.name == null ? "" : this.name;
+        toString += ",Sex:" + this.sex == null ? "" : this.sex;
+        toString += ",Sex:" + this.birth == null ? "" : this.birth;
+        toString += ",Sex:" + this.idcard == null ? "" : this.idcard;
+        toString += ",Sex:" + this.telephone == null ? "" : this.telephone;
+        toString += ",Sex:" + this.address == null ? "" : this.address;
+        return toString;
     }
 }
