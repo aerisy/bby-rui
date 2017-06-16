@@ -1,7 +1,7 @@
 package com.banana.controller;
 
 import com.banana.entity.User;
-import com.banana.entity.UserService;
+import com.banana.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,7 +15,7 @@ import java.util.List;
  */
 
 @Controller
-@RequestMapping(value = "/")
+@RequestMapping(value = "/hi/")
 public class BbyController {
 
     @Autowired
@@ -39,7 +39,7 @@ public class BbyController {
     @RequestMapping(value = "my/{page}")
     public String my_Page(@PathVariable("page") String page) {
         System.out.println("will go to my/" + page);
-        return page;
+        return "/"+page;
     }
 
     @RequestMapping(value = "add{name}", produces = {"text/plain;charset=UTF-8"})
@@ -54,7 +54,8 @@ public class BbyController {
         u.setSex("male");
         u.setTelephone("18909098872");
         userService.save(u);
-        return "Hello this is 消息！";
+        System.out.println(u.getID());
+        return "Hello this is 消息！"+u.getID();
     }
 
     @RequestMapping(value = "getall", produces = {"text/plain;charset=UTF-8"})

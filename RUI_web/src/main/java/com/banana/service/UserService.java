@@ -1,4 +1,6 @@
-package com.banana.entity;
+package com.banana.service;
+
+import com.banana.entity.User;
 
 import java.util.List;
 

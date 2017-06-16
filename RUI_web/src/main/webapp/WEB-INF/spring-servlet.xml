@@ -24,6 +24,6 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd">
         <property name="suffix" value=".jsp"/>    <!-- 后缀 -->
     </bean>
     <!-- 访问静态文件（jpg,js,css）的方法 -->
-    <mvc:resources location="/files/**" mapping="/files/**" />
     <mvc:resources location="/sui/" mapping="/sui/**" />
+    <mvc:resources location="/files/**" mapping="/files/**" />
 </beans>

@@ -6,9 +6,9 @@
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
-<script type="text/javascript" src="sui/js/jquery.min.js"></script>
-<script type="text/javascript" src="sui/sui3/js/sui.js"></script>
-<script type="text/javascript" src="sui/js/toastr/toastr.js"></script>
+<script type="text/javascript" src="${webRoot}/sui/js/jquery.min.js"></script>
+<script type="text/javascript" src="${webRoot}/sui/sui3/js/sui.js"></script>
+<script type="text/javascript" src="${webRoot}/sui/js/toastr/toastr.js"></script>
 <script type="text/javascript" language="javascript">
 	$(function(){
 		$('.navbar-nav li').on('click', function() {
@@ -58,8 +58,8 @@
 		iframe.height = iframe.height + 60;
 	} */
 </script>
-<link href="sui/sui3/js/sui.css" rel="stylesheet">
-<link href="sui/js/toastr/toastr.css" rel="stylesheet">
+<link href="${webRoot}/sui/sui3/js/sui.css" rel="stylesheet">
+<link href="${webRoot}/sui/js/toastr/toastr.css" rel="stylesheet">
 <style type="text/css">
 body {
 	padding-top: 70px;

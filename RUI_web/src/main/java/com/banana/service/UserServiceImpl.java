@@ -1,5 +1,7 @@
-package com.banana.entity;
+package com.banana.service;
 
+import com.banana.dao.UserDao;
+import com.banana.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

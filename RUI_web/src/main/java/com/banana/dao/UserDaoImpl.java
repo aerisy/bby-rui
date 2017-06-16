@@ -1,5 +1,6 @@
-package com.banana.entity;
+package com.banana.dao;
 
+import com.banana.entity.User;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Order;
 import org.springframework.stereotype.Repository;
