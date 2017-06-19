@@ -11,6 +11,8 @@ public interface UserDao {
 
     List<User> getAll();
 
+    List<User> getBy(String key, String value);
+
     User get(int id);
 
     void save(User u);

@@ -3,6 +3,7 @@ package com.banana.dao;
 import com.banana.entity.User;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -21,6 +22,15 @@ public class UserDaoImpl extends AbstractDao<Integer, User> implements UserDao {
     }
 
     @Override
+    public List<User> getBy(String key, String value) {
+        //@TODO 通过字段获取对象集合 -- 未测试
+        Criteria c = createEntityCriteria().addOrder(Order.desc("name"));
+        c.add(Restrictions.eq(key, value));
+        List<User> list = c.list();
+        return list;
+    }
+
+    @Override
     public User get(int id) {
         System.out.println("get - " + id);
         return getByKey(id);
@@ -28,9 +38,9 @@ public class UserDaoImpl extends AbstractDao<Integer, User> implements UserDao {
 
     @Override
     public void save(User u) {
-        System.out.println("save - "+u.getName());
-        System.out.println("save - "+u.getID());
-        System.out.println("save - "+u.getAddress());
+        System.out.println("save - " + u.getName());
+        System.out.println("save - " + u.getID());
+        System.out.println("save - " + u.getAddress());
         persist(u);
     }
 
@@ -40,4 +50,5 @@ public class UserDaoImpl extends AbstractDao<Integer, User> implements UserDao {
         User u = getByKey(id);
         delete(u);
     }
+
 }

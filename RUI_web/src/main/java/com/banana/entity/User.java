@@ -7,15 +7,19 @@ import javax.persistence.*;
  * Created by Administrator on 2017-6-13.
  */
 @Entity
-@Table(name = "test_user")
+@Table(name = "basic_user")
 public class User {
     @Id
+    //IDENTITY 对应mysql，oracle中使用SEQUENCE
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @GeneratedValue(strategy = GenerationType.TABLE, generator = "tableGenerator")
-    @TableGenerator(name = "tableGenerator", initialValue = 0, allocationSize = 1)
+    //generator指定到具体的generator，TableGenerator中的name为别名，这里关联；还有初始值，增值
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "user")
+    @TableGenerator(name = "user", initialValue = 0, allocationSize = 1)
     private int ID;
-    @Column(name = "name", length = 255)
+    @Column(name = "name")
     private String name;
+    @Column(name = "password")
+    private String password;
     @Column(name = "sex", length = 10)
     private String sex;
     @Column(name = "birth", length = 10)
@@ -24,8 +28,13 @@ public class User {
     private String idcard;
     @Column(name = "telephone", length = 30)
     private String telephone;
-    @Column(name = "address", length = 255)
+    @Column(name = "address")
     private String address;
+
+    @Column(name = "departid")
+    private Depart depart;
+    @Column(name = "roleid")
+    private Role role;
 
     public int getID() {
         return ID;
