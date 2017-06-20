@@ -27,4 +27,9 @@ public class UserServiceImpl implements UserService {
     public List<User> getAll() {
         return dao.getAll();
     }
+
+    @Override
+    public User get(int id) {
+        return dao.get(id);
+    }
 }

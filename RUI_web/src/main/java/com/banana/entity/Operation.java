@@ -13,8 +13,8 @@ public class Operation {
     @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "operation")
     @TableGenerator(name = "operation", initialValue = 0, allocationSize = 1)
     private int ID;
-    private int id;
     private String name;
+    @Column(name="\"desc\"")
     private String desc;
     //操作代码，唯一
     private String opCode;

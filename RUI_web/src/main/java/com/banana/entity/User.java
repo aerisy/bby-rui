@@ -31,10 +31,11 @@ public class User {
     @Column(name = "address")
     private String address;
 
-    @Column(name = "departid")
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "departid")//默认不填JoinColumn会自动生成一个外键字段
     private Depart depart;
-    @Column(name = "roleid")
-    private Role role;
+//    @Column(name = "roleid")
+//    private Role role;
 
     public int getID() {
         return ID;
@@ -90,6 +91,22 @@ public class User {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Depart getDepart() {
+        return depart;
+    }
+
+    public void setDepart(Depart depart) {
+        this.depart = depart;
     }
 
     @Override

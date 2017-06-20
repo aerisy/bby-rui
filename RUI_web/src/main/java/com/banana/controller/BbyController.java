@@ -58,6 +58,20 @@ public class BbyController {
         return "Hello this is 消息！"+u.getID();
     }
 
+    @RequestMapping(value = "show{id}", produces = {"text/plain;charset=UTF-8"})
+    @ResponseBody
+    public String showUser(@PathVariable("id") int id) {
+        System.out.println("User id:" + id);
+        User u = userService.get(id);
+        System.out.println(u.toString());
+        System.out.printf("did:"+u.getDepart().getID());
+        String out = "";
+        out+="机构ID:"+u.getDepart().getID()+"\r\n";
+        System.out.printf("dname:"+u.getDepart().getName());
+        out+="机构名称:"+u.getDepart().getName()+"\r\n";
+        return out;
+    }
+
     @RequestMapping(value = "getall", produces = {"text/plain;charset=UTF-8"})
     @ResponseBody
     public String getAllUser() {

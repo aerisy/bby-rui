@@ -14,5 +14,6 @@ public class Flow {
     @TableGenerator(name = "flow", initialValue = 0, allocationSize = 1)
     private int ID;
     private String name;
+    @Column(name="\"desc\"")
     private String desc;
 }
