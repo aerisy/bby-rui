@@ -12,10 +12,10 @@ import java.util.List;
  * Created by Administrator on 2017-6-13.
  */
 @Repository("UserDao")
-public class UserDaoImpl extends AbstractDao<Integer, User> implements UserDao {
-    @Override
+public class UserDaoImpl extends BaseDaoImpl<Integer, User> implements UserDao {
+    /*@Override
     public List<User> getAll() {
-        Criteria c = createEntityCriteria().addOrder(Order.desc("name"));
+        Criteria c = createCriteria().addOrder(Order.desc("name"));
         c.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY);
         List<User> list = c.list();
         return list;
@@ -24,7 +24,7 @@ public class UserDaoImpl extends AbstractDao<Integer, User> implements UserDao {
     @Override
     public List<User> getBy(String key, String value) {
         //@TODO 通过字段获取对象集合 -- 未测试
-        Criteria c = createEntityCriteria().addOrder(Order.desc("name"));
+        Criteria c = createCriteria().addOrder(Order.desc("name"));
         c.add(Restrictions.eq(key, value));
         List<User> list = c.list();
         return list;
@@ -33,7 +33,7 @@ public class UserDaoImpl extends AbstractDao<Integer, User> implements UserDao {
     @Override
     public User get(int id) {
         System.out.println("get - " + id);
-        return getByKey(id);
+        return super.get(id);
     }
 
     @Override
@@ -49,6 +49,6 @@ public class UserDaoImpl extends AbstractDao<Integer, User> implements UserDao {
         System.out.println("delete");
         User u = getByKey(id);
         delete(u);
-    }
+    }*/
 
 }

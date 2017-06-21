@@ -5,17 +5,29 @@ import com.banana.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import javax.transaction.Transactional;
-import java.util.List;
 
 /**
  * Created by Administrator on 2017-6-13.
  */
-@Service("UserService")
+//("UserService")
+@Service
 @Transactional
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl extends BaseServiceImpl<Integer, User> implements UserService {
 
-    @Autowired
+    /*@Autowired
+    protected UserDao userDao;
+
+    public UserDao getUserDao() {
+        return userDao;
+    }*/
+
+    @Resource
+    public void setUserDao(UserDao userDao) {
+        super.setBaseDao(userDao);
+    }
+    /*@Autowired
     UserDao dao;
 
     @Override
@@ -32,4 +44,9 @@ public class UserServiceImpl implements UserService {
     public User get(int id) {
         return dao.get(id);
     }
+
+    @Override
+    public List<User> getList(String key,Object value){
+        return dao.getList(key,value);
+    }*/
 }

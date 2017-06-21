@@ -17,14 +17,15 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by Administrator on 2017-6-13.
+ * Created by Administrator on 2017-6-21.
  */
-public abstract class AbstractDao<PK extends Serializable, T> implements BaseDao<PK,T>{
+public abstract class BaseDaoImpl<PK extends Serializable, T> implements BaseDao<PK,T>{
+//public abstract class BaseDaoImpl<T, PK extends Serializable> implements BaseDao<T, PK> {
 
-   private final Class<T> persistentClass;
+    private final Class<T> persistentClass;
 
     @SuppressWarnings("unchecked")
-    public AbstractDao() {
+    public BaseDaoImpl() {
         this.persistentClass = (Class<T>) ((ParameterizedType) this.getClass().getGenericSuperclass()).getActualTypeArguments()[1];
     }
 

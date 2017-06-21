@@ -21,5 +21,5 @@ public class Menu {
     private String ID;
     private String name;
     private String url;
-//    private Set<Menu> children;
+//    private Set<MenuDao> children;
 }

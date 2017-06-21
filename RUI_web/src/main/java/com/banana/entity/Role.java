@@ -21,6 +21,6 @@ public class Role {
     private String ID;
     private String name;
     // 或者改成懒加载
-    /*private Set<Menu> menuSet;
+    /*private Set<MenuDao> menuSet;
     private Set<Operation> opSet;*/
 }

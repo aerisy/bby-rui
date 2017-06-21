@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Administrator on 2017/6/i3 0003.
@@ -39,23 +40,24 @@ public class BbyController {
     @RequestMapping(value = "my/{page}")
     public String my_Page(@PathVariable("page") String page) {
         System.out.println("will go to my/" + page);
-        return "/"+page;
+        return "/" + page;
     }
 
     @RequestMapping(value = "add{name}", produces = {"text/plain;charset=UTF-8"})
     @ResponseBody
     public String addUser(@PathVariable("name") String name) {
         System.out.println("addUser:" + name);
+        double ran = Math.random();
         User u = new User();
-//        u.setID(123);
         u.setName(name);
-        u.setAddress("Xiaofang Dalou 4#108");
-        u.setIdcard("610000198909098277");
-        u.setSex("male");
-        u.setTelephone("18909098872");
+        u.setAddress("西安市高新区创新大厦" + (ran + "").substring(4, 5) + "栋" + (ran + "").substring(6, 9) + "室");
+        u.setIdcard("61"+(int) (ran * 1000000000) + "");
+        u.setSex((ran * 10) < 5 ? "male" : "female");
+        u.setTelephone(1 + (ran + "").substring(6, 16));
         userService.save(u);
         System.out.println(u.getID());
-        return "Hello this is 消息！"+u.getID();
+        System.out.println(u.toString());
+        return "Hello this is 消息！" + u.getID();
     }
 
     @RequestMapping(value = "show{id}", produces = {"text/plain;charset=UTF-8"})
@@ -64,19 +66,39 @@ public class BbyController {
         System.out.println("User id:" + id);
         User u = userService.get(id);
         System.out.println(u.toString());
-        System.out.printf("did:"+u.getDepart().getID());
+        System.out.printf("did:" + u.getDepart().getID());
         String out = "";
-        out+="机构ID:"+u.getDepart().getID()+"\r\n";
-        System.out.printf("dname:"+u.getDepart().getName());
-        out+="机构名称:"+u.getDepart().getName()+"\r\n";
+        out += "机构ID:" + u.getDepart().getID() + "\r\n";
+        System.out.printf("dname:" + u.getDepart().getName());
+        out += "机构名称:" + u.getDepart().getName() + "\r\n";
         return out;
     }
 
     @RequestMapping(value = "getall", produces = {"text/plain;charset=UTF-8"})
     @ResponseBody
     public String getAllUser() {
-        System.out.println("get all User");
+        System.out.println("get all User.");
         List<User> list = userService.getAll();
+        String out = "";
+        if (list == null || list.size() == 0) {
+            out = "没有用户！";
+        } else {
+            for (User u : list) {
+                out += u.toString() + "\r\n";
+            }
+        }
+        System.out.println(out);
+        for (Map<String,Object> map : userService.querySQL("select name from basic_user",null)) {
+            System.out.println(map.get("name"));
+        }
+        return out;
+    }
+
+    @RequestMapping(value = "getuser/{key}/{value}", produces = {"text/plain;charset=UTF-8"})
+    @ResponseBody
+    public String getUser(@PathVariable("key") String key, @PathVariable("value") String value) {
+        System.out.println("get all User.");
+        List<User> list = userService.getList(key, value);
         String out = "";
         if (list == null || list.size() == 0) {
             out = "没有用户！";
@@ -94,5 +116,11 @@ public class BbyController {
     public String message() {
         System.out.println("message:");
         return "Hello this is 消息！";
+    }
+
+    public static void main(String[] args) {
+        double d = Math.random();
+        System.out.println("61"+(int) (d * 1000000000) + "");
+        System.out.println((int) (d * 10));
     }
 }

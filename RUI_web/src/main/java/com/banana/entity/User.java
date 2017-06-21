@@ -2,13 +2,14 @@ package com.banana.entity;
 
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by Administrator on 2017-6-13.
  */
 @Entity
 @Table(name = "basic_user")
-public class User {
+public class User implements Serializable{
     @Id
     //IDENTITY 对应mysql，oracle中使用SEQUENCE
 //    @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -111,12 +112,12 @@ public class User {
 
     @Override
     public String toString() {
-        String toString = "Name:" + this.name == null ? "" : this.name;
-        toString += ",Sex:" + this.sex == null ? "" : this.sex;
-        toString += ",Sex:" + this.birth == null ? "" : this.birth;
-        toString += ",Sex:" + this.idcard == null ? "" : this.idcard;
-        toString += ",Sex:" + this.telephone == null ? "" : this.telephone;
-        toString += ",Sex:" + this.address == null ? "" : this.address;
+        String toString = "Name:" + (this.name == null ? "" : this.name);
+        toString += ",Sex:" + (this.sex == null ? "" : this.sex);
+        toString += ",birth:" + (this.birth == null ? "" : this.birth);
+        toString += ",idcard:" + (this.idcard == null ? "" : this.idcard);
+        toString += ",telephone:" + (this.telephone == null ? "" : this.telephone);
+        toString += ",address:" + (this.address == null ? "" : this.address);
         return toString;
     }
 }

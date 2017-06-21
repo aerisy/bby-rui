@@ -7,15 +7,6 @@ import java.util.List;
 /**
  * Created by Administrator on 2017-6-13.
  */
-public interface UserDao {
+public interface UserDao extends BaseDao<Integer, User> {
 
-    List<User> getAll();
-
-    List<User> getBy(String key, String value);
-
-    User get(int id);
-
-    void save(User u);
-
-    void delete(int id);
 }
