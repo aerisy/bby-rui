@@ -51,7 +51,7 @@ public class BbyController {
         User u = new User();
         u.setName(name);
         u.setAddress("西安市高新区创新大厦" + (ran + "").substring(4, 5) + "栋" + (ran + "").substring(6, 9) + "室");
-        u.setIdcard("61"+(int) (ran * 1000000000) + "");
+        u.setIdcard("61" + (int) (ran * 1000000000) + "");
         u.setSex((ran * 10) < 5 ? "male" : "female");
         u.setTelephone(1 + (ran + "").substring(6, 16));
         userService.save(u);
@@ -63,14 +63,18 @@ public class BbyController {
     @RequestMapping(value = "show{id}", produces = {"text/plain;charset=UTF-8"})
     @ResponseBody
     public String showUser(@PathVariable("id") int id) {
-        System.out.println("User id:" + id);
+        String out = "用户信息:\r\n";
         User u = userService.get(id);
-        System.out.println(u.toString());
-        System.out.printf("did:" + u.getDepart().getID());
-        String out = "";
-        out += "机构ID:" + u.getDepart().getID() + "\r\n";
-        System.out.printf("dname:" + u.getDepart().getName());
-        out += "机构名称:" + u.getDepart().getName() + "\r\n";
+        out += ("用户ID:" + id) + "\r\n";
+        out += ("用户名称:" + u.getName()) + "\r\n";
+        out += ("用户性别:" + u.getSex()) + "\r\n";
+        out += ("用户IDCARD:" + u.getIdcard()) + "\r\n";
+        out += ("用户联系方式:" + u.getTelephone()) + "\r\n";
+        out += ("用户住址:" + u.getAddress()) + "\r\n";
+        if (u.getDepart() != null) {
+            out += ("用户机构ID:" + u.getDepart().getID()) + "\r\n";
+            out += ("用户机构名称:" + u.getDepart().getName()) + "\r\n";
+        }
         return out;
     }
 
@@ -87,8 +91,7 @@ public class BbyController {
                 out += u.toString() + "\r\n";
             }
         }
-        System.out.println(out);
-        for (Map<String,Object> map : userService.querySQL("select name from basic_user",null)) {
+        for (Map<String, Object> map : userService.querySQL("select name from basic_user", new Object[]{})) {
             System.out.println(map.get("name"));
         }
         return out;
@@ -120,7 +123,7 @@ public class BbyController {
 
     public static void main(String[] args) {
         double d = Math.random();
-        System.out.println("61"+(int) (d * 1000000000) + "");
+        System.out.println("61" + (int) (d * 1000000000) + "");
         System.out.println((int) (d * 10));
     }
 }

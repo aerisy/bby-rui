@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+         pageEncoding="UTF-8" %>
 <!-- SUI3 js,css -->
 <script type="text/javascript" src="${webRoot}/sui/js/jquery.min.js"></script>
 <script type="text/javascript" src="${webRoot}/sui/sui3/js/sui.js"></script>
@@ -40,57 +40,61 @@
 
 <script src="${webRoot}/sui/sui3/js/common.js" type="text/javascript"></script>
 <style type="text/css">
-.bgs-rlabel {
-	text-align: right;
-}
+    .bgs-rlabel {
+        text-align: right;
+    }
 
-.bgs-clabel {
-	text-align: center;
-}
+    .bgs-clabel {
+        text-align: center;
+    }
 
-.grid-demo .sui-row+.sui-row, .grid-demo .sui-row-fluid+.sui-row-fluid {
-	margin-top: 10px;
-}
+    .grid-demo .sui-row + .sui-row, .grid-demo .sui-row-fluid + .sui-row-fluid {
+        margin-top: 10px;
+    }
 
-.content{
-	min-height: 450px;
-}
+    .content {
+        min-height: 450px;
+    }
 
-body {
-	padding-top : 18px;
-}
+    .ns-dataTable {
+        width: 100%!important;
+    }
 
-/*
- * Footer
- *
- * Separated section of content at the bottom of all pages, save the homepage.
- */
+    body {
+        padding-top: 18px;
+    }
 
-/* .bs-docs-footer {
-  padding-top: 40px;
-  padding-bottom: 40px;
-  color: #767676;
-  text-align: center;
-  border-top: 1px solid #e5e5e5;
-}
+    /*
+     * Footer
+     *
+     * Separated section of content at the bottom of all pages, save the homepage.
+     */
 
-.bs-docs-footer-links {
-  padding-left: 0;
-  margin-top: 20px;
-}
+    /* .bs-docs-footer {
+      padding-top: 40px;
+      padding-bottom: 40px;
+      color: #767676;
+      text-align: center;
+      border-top: 1px solid #e5e5e5;
+    }
 
-.bs-docs-footer-links li {
-  display: inline;
-  padding: 0 2px;
-}
+    .bs-docs-footer-links {
+      padding-left: 0;
+      margin-top: 20px;
+    }
 
-.bs-docs-footer-links li:first-child {
-  padding-left: 0;
-}
+    .bs-docs-footer-links li {
+      display: inline;
+      padding: 0 2px;
+    }
 
-@media (min-width: 768px) {
-  .bs-docs-footer p {
-    margin-bottom: 0;
-  }
-} */
+    .bs-docs-footer-links li:first-child {
+      padding-left: 0;
+    }
+
+    @media (min-width: 768px) {
+      .bs-docs-footer p {
+        margin-bottom: 0;
+      }
+    } */
 </style>

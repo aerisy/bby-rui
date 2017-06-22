@@ -12,7 +12,7 @@ import java.io.Serializable;
 public class User implements Serializable{
     @Id
     //IDENTITY 对应mysql，oracle中使用SEQUENCE
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY) -- TABLE
     //generator指定到具体的generator，TableGenerator中的name为别名，这里关联；还有初始值，增值
     @GeneratedValue(strategy = GenerationType.TABLE, generator = "user")
     @TableGenerator(name = "user", initialValue = 0, allocationSize = 1)

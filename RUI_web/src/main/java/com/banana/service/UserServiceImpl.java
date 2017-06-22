@@ -27,6 +27,24 @@ public class UserServiceImpl extends BaseServiceImpl<Integer, User> implements U
     public void setUserDao(UserDao userDao) {
         super.setBaseDao(userDao);
     }
+
+   /* @Override
+    public User load(Integer id) {
+        User u = super.load(id);
+        System.out.println("load departname:");
+        System.out.println(u.getDepart().getName());
+        return u;
+    }
+
+    @Override
+    public User get(Integer id) {
+        User u = super.load(id);
+        System.out.println("get departname:");
+        System.out.println(u.getDepart().getName());
+        return u;
+    }*/
+
+
     /*@Autowired
     UserDao dao;
 

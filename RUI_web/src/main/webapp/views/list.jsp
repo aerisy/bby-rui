@@ -24,18 +24,18 @@
 						data-width="large" data-title="图标展示" class="btn btn-primary">ICONS</a>
 			</div>
 			</div>
-			<table id="dtable" class="table table-bordered ns-dataTable " >
+			<table id="dtable" class="table table-bordered ns-dataTable" >
 				<thead>
 					<tr>
-						<th width="60px">ID</th>
+						<th width="10%">ID</th>
 						<th width="14%">姓名</th>
-						<th width="70px">性别</th>
+						<th width="10%">性别</th>
 						<th width="10%">籍贯</th>
 						<th width="10%">联系电话</th>
 						<th width="10%">身份证</th>
 						<th width="10%">家庭住址</th>
-						<th width="">备注</th>
-						<th width="12%">操作</th>
+						<th width="10%">备注</th>
+						<th width="16%">操作</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -72,44 +72,6 @@
 			</table>
 			<label>
 			</label>
-			<script>
-				$(document).ready(function(){
-					$(".ns-dataTable").on('',function(){
-						
-					}).DataTable({
-						'language':{
-							'sProcessing':'处理中',
-							'sLengthMenu':'_MENU_',//'显示_MENU_  项结果',
-							'sZeroRecords':'没有匹配结果',
-							'sInfo':'显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项',
-							'sInfoFiltered':'（结果从 _MAX_ 条数据中过滤所得）',
-							'sInfoEmpty':'(由 _MAX_ 项结果过滤)',
-							'sInfoPostFix':'',
-							'sSearch':'搜索： ',
-							'sUrl':'',
-							'sEmptyTable':'表中数据为空',
-							'sLoadingRecords':'载入中...',
-							'sInfoThousands':',',
-							'oPaginate':'',
-							'oAria':{
-								'sSortAscending':'以升序排列此列',
-								'sSortDescending':'以降序排列此列'
-							},
-							'oPaginate':{
-								'sPrevious':'上一页',
-								'sNext':'下一页',
-								'sFirst':'首页',
-								'sLast':'末页'
-							}
-						},
-						'bProcessing':true,
-						//'scrollY':500,
-						'scrollX':true,
-						'bScrollCollapse':true,
-						'bStateSave':true
-					});
-				});
-			</script>
 		</div>
 	</div>
 	<jsp:include page="footer.jsp"></jsp:include>
