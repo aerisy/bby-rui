@@ -121,6 +121,13 @@ public class BbyController {
         return "Hello this is 消息！";
     }
 
+    @RequestMapping(value = "message_fail", produces = {"text/plain;charset=UTF-8"})
+    @ResponseBody
+    public String message_fail() {
+        System.out.println("message_fail:");
+        return "login failure！";
+    }
+
     public static void main(String[] args) {
         double d = Math.random();
         System.out.println("61" + (int) (d * 1000000000) + "");

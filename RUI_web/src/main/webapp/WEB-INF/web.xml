@@ -31,6 +31,7 @@
     <welcome-file-list>
         <welcome-file>/views/pageDemo.jsp</welcome-file>
     </welcome-file-list>
+
     <!-- Spring MVC配置 -->
     <servlet>
         <servlet-name>spring</servlet-name>
@@ -83,6 +84,20 @@
     </session-config>
 
     <!-- ############################################ filter start  ############################################ -->
+    <!--Shiro CAS -->
+    <filter>
+        <filter-name>shiroFilter</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+        <init-param>
+            <param-name>targetFilterLifecycle</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>shiroFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
     <!--hibernate 相关-->
     <filter>
         <filter-name>SpringOpenSessionInViewFilter</filter-name>

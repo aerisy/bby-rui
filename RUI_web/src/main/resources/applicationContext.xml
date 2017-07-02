@@ -24,6 +24,7 @@
     <!-- Hibernate4 -->
     <!-- 加载资源文件  其中包含变量信息，必须在Spring配置文件的最前面加载，即第一个加载-->
     <context:property-placeholder location="classpath:db.properties"/>
+
     <context:component-scan base-package="com.banana.entity,com.banana.dao,com.banana.service"/>
     <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
@@ -107,5 +108,8 @@
         <!--Advisor定义，切入点和通知分别为txPointcut、txAdvice-->
         <aop:advisor pointcut-ref="serviceOperation" advice-ref="txAdvice"/>
     </aop:config>
+
+    <!-- shiro配置 -->
+    <import resource="cas-client-shiro.xml"/>
 
 </beans>
