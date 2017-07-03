@@ -16,15 +16,8 @@
     <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
         <property name="securityManager" ref="securityManager"/>
         <!-- 设定用户的登录链接，这里为cas登录页面的链接地址可配置回调地址 -->
-        <property name="loginUrl" value="http://127.0.0.1:8080/cas/login?service=http://127.0.0.1:8888/hi/page"/>
-        <!--<property name="filters">
-            <util:map>
-                &lt;!&ndash; <entry key="authc" value-ref="authcFilter"/>
-                <entry key="captchaFilter" value-ref="captchaFilter"/> &ndash;&gt;
-                &lt;!&ndash; 添加casFilter到shiroFilter &ndash;&gt;
-                <entry key="cas" value-ref="casFilter"/>
-            <util:map>
-        </property>-->
+        <property name="loginUrl" value="http://127.0.0.1:8080/cas/login?service=http://127.0.0.1:8888/shiro-cas"/>
+        <!--<property name="successUrl" value="http://127.0.0.1:8888/shiro-cas" />-->
         <property name="filters">
             <util:map>
                 <!-- 添加casFilter到shiroFilter -->
@@ -36,20 +29,22 @@
             <value>
                 /shiro-cas = casFilter
                 /logout = logoutFilter
-                /users/** = user
+                /hi/** = user
             </value>
         </property>
     </bean>
 
     <bean id="casFilter" class="org.apache.shiro.cas.CasFilter">
         <!-- 配置验证错误时的失败页面 -->
-        <property name="failureUrl" value="/hi/message_fail"/>
-        <property name="successUrl" value="/hi/message"/>
+        <!--<property name="failureUrl" value="/hi/message_fail"/>
+        <property name="successUrl" value="/hi/message"/>-->
+        <property name="successUrl" value="/hi/mymain"/>
+        <property name="failureUrl" value="/hi/mymain"/>
     </bean>
 
     <bean id="logoutFilter" class="org.apache.shiro.web.filter.authc.LogoutFilter">
         <!-- 配置验证错误时的失败页面 -->
-        <property name="redirectUrl" value="http://127.0.0.1:8080/cas/logout?service=http://127.0.0.1:8888/hi/message"/>
+        <property name="redirectUrl" value="http://127.0.0.1:8080/cas/logout?service=http://127.0.0.1:8888/shiro-cas"/>
     </bean>
 
     <bean id="casRealm" class="com.banana.realm.UserRealm">
@@ -58,7 +53,7 @@
         <!-- cas服务端地址前缀 -->
         <property name="casServerUrlPrefix" value="http://127.0.0.1:8080/cas"/>
         <!-- 应用服务地址，用来接收cas服务端票据 -->
-        <property name="casService" value="http://127.0.0.1:8888/hi/mymain"/>
+        <property name="casService" value="http://127.0.0.1:8888/shiro-cas"/>
     </bean>
 
     <!-- Shiro's main business-tier object for web-enabled applications -->

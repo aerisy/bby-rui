@@ -36,7 +36,7 @@ public class UserRealm extends CasRealm {
      */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
-
+        System.out.println("authorization");
         String account = (String) principals.getPrimaryPrincipal();
         SimpleAuthorizationInfo authorizationInfo = null;
         if (authorizationInfo == null) {
@@ -61,7 +61,7 @@ public class UserRealm extends CasRealm {
      * 2、将用户基本信息设置到会话中
      */
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) {
-
+        System.out.println("authentication");
         AuthenticationInfo authc = super.doGetAuthenticationInfo(token);
 
         String account = (String) authc.getPrincipals().getPrimaryPrincipal();

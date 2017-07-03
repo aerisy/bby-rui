@@ -8,11 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Welcome Page</title>
+    <title>Login Failed Page</title>
 </head>
 <body>
-<h1>This is a Welcome Page.</h1>
-<h2>欢迎登录系统！</h2>
-<a href="/hi/mymain">进入系统</a>
+<h2>用户未登录，请登录！</h2>
+<a href='http://127.0.0.1:8080/cas/login?service=http://127.0.0.1:8888/hi/mymain'>登录地址</a>
 </body>
 </html>

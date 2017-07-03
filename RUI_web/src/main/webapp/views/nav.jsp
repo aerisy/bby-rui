@@ -49,7 +49,7 @@
 						<li><a href="#">个人设置</a></li>
 						<li><a href="#">密码修改</a></li>
 						<li class="divider"></li>
-						<li><a href="#">退出</a></li>
+						<li><a href="../logout">退出</a></li>
 					</ul></li>
 			</ul>
 		</div>
